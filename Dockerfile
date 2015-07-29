@@ -4,7 +4,7 @@ MAINTAINER Valentin Lab <valentin.lab@kalysto.org>
 ENV BASEDIR /var/lib/rrdcached/db
 
 RUN apt-get update && \
-    apt-get install --force-yes -y --no-install-recommends collectd rrdcached && \
+    DEBIAN_FRONTEND=noninteractive apt-get install --force-yes -y --no-install-recommends collectd rrdcached && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
