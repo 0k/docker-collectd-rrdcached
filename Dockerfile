@@ -3,9 +3,6 @@ MAINTAINER Valentin Lab <valentin.lab@kalysto.org>
 
 ENV BASEDIR /var/lib/rrdcached/db
 
-ENV LOGSTASH_SERVER logstash
-ENV LOGSTASH_PORT 25826
-
 RUN apt-get update && \
     apt-get install --force-yes -y --no-install-recommends collectd rrdcached && \
     apt-get clean && \
