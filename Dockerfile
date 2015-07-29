@@ -15,4 +15,6 @@ RUN chmod a+x /entrypoint.sh
 VOLUME /etc/collectd/collectd.conf.d/
 VOLUME ${BASEDIR}
 
+EXPOSE 42217
+
 ENTRYPOINT /entrypoint.sh
