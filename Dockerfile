@@ -6,12 +6,14 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ADD collectd.conf /etc/collectd/collectd.conf
+ADD etc/collectd/collectd.conf /etc/collectd/collectd.conf
+ADD etc/init.d/rrdcached /etc/init.d/rrdcached
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
 
 VOLUME /etc/collectd/collectd.conf.d/
 VOLUME /var/lib/rrdcached/db
+VOLUME /var/run/rrdcached
 
 EXPOSE 42217
 
